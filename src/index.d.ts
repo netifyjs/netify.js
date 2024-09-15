@@ -55,6 +55,8 @@ declare module 'netify.js' {
   export class NetifyClient<T extends Protocol> extends NetifySocket<T> {
     public constructor(options: NetifyClientOptions);
 
+    public socket: Socket;
+
     public connect(): Promise<void>;
     public useProtocol<T>(handler: new (...args: any[]) => T, options?: Object): this;
   }
